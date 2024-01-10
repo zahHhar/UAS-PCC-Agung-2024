@@ -13,7 +13,7 @@ jobs:
 
       - name: Build and tag docker image
         run: |
-          docker build -t ${{secrets.USERNAME}}/uas-pcc-agung-2024:latest -f Dockerfile .
+          docker build -t ${{secrets.USERNAME}}/uas-pcc-agung-2024:v1 -f Dockerfile .
 
       - name: Push to Dockerhub
-        run: docker login -u ${{secrets.USERNAME}} -p  ${{secrets.ACCESS_TOKEN}} && docker push ${{secrets.USERNAME}}/uas-pcc-agung-2024:latest
+        run: docker login -u ${{secrets.USERNAME}} -p  ${{secrets.ACCESS_TOKEN}} && docker push ${{secrets.USERNAME}}/uas-pcc-agung-2024:v1
